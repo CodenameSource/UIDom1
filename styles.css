@@ -1,0 +1,616 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-icons a {
+    color: #7a6a60;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #b09d8b;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 8px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #7a6a60;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Navbar that shows after scrolling */
+.navbar {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    padding: 0;
+    display: none;
+    box-shadow: none;
+    z-index: 999;
+    top: 50px;
+}
+
+.navbar .nav-links {
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #fff;
+    margin: 0;
+}
+
+/* Navbar links */
+.navbar a {
+    color: #7a6a60;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    color: #a57455;
+}
+
+/* Hero Section - Improved Styling */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 100px 20px;
+    background: url('https://placehold.co/1920x1080') no-repeat center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.hero-button {
+    padding: 15px 40px;
+    background-color: #a44e5e;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.hero-button:hover {
+    background-color: #872d3d;
+    transform: scale(1.05);
+}
+
+/* Product Section */
+.product-section:nth-child(even) {
+    background-color: #fff; /* Light background for even sections */
+}
+
+.product-section:nth-child(odd) {
+    background-color: #f5f5f5; /* White for odd sections */
+}
+
+/* Section Title */
+.product-section h2 {
+    font-size: 2.5rem;
+    color: #5c4a4a;
+    margin-bottom: 5px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Section Description */
+.product-section .section-description {
+    font-size: 1.1rem;
+    color: #7a6a60;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+/* Add small padding below product sections */
+.product-section {
+    padding-bottom: 20px;
+}
+
+/* Centered Product Cards */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Individual Product Card */
+.product-card {
+    background: linear-gradient(to bottom, #f9f9f9, #fff);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 150px;
+    margin: 0 10px;
+}
+
+/* Remove right margin of the first product card */
+.product-container .product-card:first-child {
+    margin-right: 10px;
+}
+
+/* Remove left margin of the last product card */
+.product-container .product-card:last-child {
+    margin-left: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Product Title */
+.product-title {
+    font-size: 1.2rem;
+    color: #5c4a4a;
+    font-weight: bold;
+    margin: 8px 0 8px;
+    text-align: center;
+}
+
+/* Product Subtitle */
+.product-subtitle {
+    font-size: 0.9rem;
+    color: #7a6a60;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+/* Product Rating */
+.product-rating {
+    font-size: 0.8rem;
+    color: #ffbf00;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Product Description */
+.product-description {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 10px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Product Price and Button Container (Aligns the price, rating, and button at the same level) */
+.product-price-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Product Price */
+.product-price {
+    font-size: 1rem;
+    color: #a44e5e;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-align: center;
+    flex-grow: 0;
+}
+
+/* Product Button */
+.product-button {
+    padding: 8px 16px;
+    background-color: #a44e5e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    margin-top: auto;
+}
+
+.product-button:hover {
+    background-color: #872d3d;
+    transform: scale(1.05);
+}
+
+/* Natural and Bio Section */
+.natural-bio {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+/* Flexbox container for bio content */
+.bio-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Bio Text Styling */
+.bio-text {
+    flex: 1;
+    text-align: left;
+}
+
+.bio-text h2 {
+    font-size: 2rem;
+    color: #5c4a4a;
+    margin-bottom: 20px;
+}
+
+.bio-text h3 {
+    font-size: 1.5rem;
+    color: #7a6a60;
+    margin: 20px 0;
+}
+
+.bio-text p {
+    font-size: 1rem;
+    color: #7a6a60;
+    margin-bottom: 15px;
+}
+
+/* Bio Image Styling */
+.bio-image {
+    flex-shrink: 0;
+}
+
+.bio-image img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+}
+
+/* Separate Subscription Section */
+.subscribe-section {
+    background-color: #a44e5e;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.subscribe-section .subscribe p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.subscribe-section .subscribe label {
+    font-size: 1rem;
+}
+
+.subscribe-section .subscribe input {
+    margin-right: 10px;
+}
+
+/* User Comments Section */
+.comments-section {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.comments-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.comments-section .section-description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* Comment Layout */
+.comments-list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.comment {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Comment Header: Profile Picture, Name, and Rating */
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #333;
+}
+
+.star-rating {
+    color: #ffcc00;
+    font-size: 1.2rem;
+}
+
+/* Comment Title and Text */
+.comment-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+.comment-text {
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Comment Image Below Text */
+.comment-image {
+    width: 150px;
+    height: 150px;
+    margin-top: 15px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Likes/Dislikes Section */
+.reaction {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Comment Date */
+.comment-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Product Review Link Style */
+.product-review-link {
+    margin-top: 15px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.product-review-link a {
+    text-decoration: none;
+    color: #a44e5e;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.product-review-link a:hover {
+    color: #5c4a4a;
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Footer Section Styling for Each Individual Section */
+.footer-section {
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #5c4a4a;
+}
+
+/* Useful Links Section */
+.footer .useful-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .useful-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer .useful-links a {
+    color: #7a6a60;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.footer .useful-links a:hover {
+    color: #a57455;
+}
+
+/* Subscribe Section */
+.footer .subscribe p {
+    font-size: 1rem;
+    color: #7a6a60;
+}
+
+.footer .subscribe label {
+    font-size: 1rem;
+    color: #7a6a60;
+}
+
+/* Social Media Section */
+.footer .social-media p {
+    font-size: 1rem;
+    color: #7a6a60;
+}
+
+/* Responsive Layout for Footer Sections */
+@media (min-width: 768px) {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    .footer-section {
+        flex: 1;
+        max-width: 30%;
+    }
+
+    .footer-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-section ul {
+        padding-left: 20px;
+    }
+}
+
+/* Copyright Footer Styling */
+.footer-copyright {
+    background-color: #f9f9f9;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers the content vertically */
+    width: 100%;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #7a6a60;
+    margin: 0;
+}
